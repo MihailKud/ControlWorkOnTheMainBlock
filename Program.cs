@@ -25,7 +25,44 @@ namespace ControlWorkOnTheMainBlock
     {
         public static void Main (string [] arg)
         {
-
+            // задаем исходный массив строк
+            string [] arrayStr = {"Hello", "244444", "wor44444", "122222", "1567",
+                                  "-255555", "computer science"};
+            int j = 0;
+            
+            // определяем количество строк в исходном массиве длины менее или равно 3
+            // для корректного инициирования нового массива
+            int z = 0;
+            for (int i = 0; i < arrayStr.Length; i++)
+            {
+                if (arrayStr[i].Length <= 3) z++;                
+            }
+            // инициализируем новый массив
+            string [] newArray = new string[z];
+            
+            if (z != 0)
+            { 
+                // заполняем новый массив
+                for (int i = 0; i < arrayStr.Length; i++)
+                {
+                   if (arrayStr[i].Length <= 3)
+                    {
+                        newArray[j] = arrayStr[i];
+                        j = j + 1;
+                    }
+                }
+                // выводим новый массив на экран
+                for (int i = 0; i < newArray.Length; i++)
+                {
+                    Console.WriteLine(newArray[i]);
+                }
+            }
+                else 
+                {
+                    Console.WriteLine
+                    ("Новый массив заполнить не удалось, строк длины менее или равное 3 нет");
+                    Console.WriteLine("Новый массив = []");
+                }
         }
     }        
 }
